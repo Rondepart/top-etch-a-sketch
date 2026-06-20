@@ -1,6 +1,9 @@
-const gridContainer = document.querySelector(".grid-container");
+const gridContainer = document.querySelector('.grid-container');
 gridContainer.style.display = 'inline-block';
-gridContainer.style.overflow = 'hidden';  
+gridContainer.style.overflow = 'hidden'; 
+gridContainer.style.width = '960px'; 
+gridContainer.style.height = '960px';
+gridContainer.style.border = '5px solid black'; 
 
 for (let row = 0; row < 16; row++) {
   const rowDiv = document.createElement('div');
@@ -18,8 +21,8 @@ for (let row = 0; row < 16; row++) {
   gridContainer.appendChild(rowDiv);
 }
 
-gridContainer.addEventListener("mouseover", function(event) {
+gridContainer.addEventListener('mouseover', function(event) {
   if (event.target !== gridContainer) {
-      event.target.style.background = "black";
+      event.target.style.background = 'black';
   }
 })
