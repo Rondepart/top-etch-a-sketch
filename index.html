@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOP Etch-A-Sketch</title>
     <script src="index.js" defer ></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <button class = "change-canvas-size" type="button" >Change Canvas Grid Count</button>
-    <div class = "grid-container"></div>
+    <div class="container">
+        <button class = "change-canvas-size" type="button" >Change Canvas Grid Count</button>
+        <div class = "grid-container"></div>
+    </div>
 </body>
 </html>

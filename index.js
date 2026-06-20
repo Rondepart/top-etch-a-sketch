@@ -22,6 +22,7 @@ function generateGridCells(cellCount) {
     cell.style.flex = '1';
     cell.style.border = '1px solid black';
     cell.style.boxSizing = 'border-box';
+    cell.dataset.opacity = 0;
     rowDiv.appendChild(cell);
   }
 
@@ -32,8 +33,15 @@ function generateGridCells(cellCount) {
 generateGridCells(16);
 
 gridContainer.addEventListener('mouseover', function(event) {
-  if (event.target !== gridContainer) {
-      event.target.style.background = 'black';
+  if (!event.target.classList.contains('cell')) return;
+
+  const cell = event.target;
+  let opacity = parseFloat(cell.dataset.opacity) || 0;
+
+  if (opacity < 1) {
+    opacity = parseFloat((opacity + 0.1).toFixed(1));
+    cell.dataset.opacity = opacity;
+    cell.style.background = `rgba(0, 0, 0, ${opacity})`;
   }
 })
 
